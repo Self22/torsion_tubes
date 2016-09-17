@@ -1,0 +1,17 @@
+{
+  "name": "torsion_tubes",
+  "description": "torsion_tubes_site",
+  "main": "gulpfile.js",
+  "authors": [
+    "Evgeniy Sayenko <evgeniy.sayenko@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

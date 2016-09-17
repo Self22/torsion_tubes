@@ -1,0 +1,98 @@
+//tools
+@import "_misc/mixins";
+@import "_misc/normalize";
+//fonts
+@import "../fonts/roboto.css";
+
+* {
+  @include box-sizing(border-box);
+}
+
+body {
+  font-family: Roboto, sans-serif;
+
+  /*
+      Roboto, 100, 100 italic, 300, 300 italic, 400, 400 italic, 500, 500 italic, 700, 700 italic, 900, 900 italic
+  */
+
+  line-height: 1.42;
+  position: relative;
+  background: url("../img/bamboo-header.jpg") no-repeat fixed;
+  background-size: cover;
+}
+
+.header {
+  margin-top: 15px;
+  height: 150px;
+  width: 100%;
+  background: url(http://api.thumbr.it/whitenoise-361x370.png?background=#8fc31fff&noise=626262&density=45&opacity=26);
+  opacity: .6;
+  border: 1px solid #c8fb24;
+  box-shadow: 2px 1px 22px rgba(0, 0, 0, .6);
+
+}
+
+.wrapper {
+  display: flex;
+  margin: 20px auto;
+  justify-content: space-around;
+  align-items: stretch;
+  align-content: stretch;
+  flex-flow: row wrap;
+  padding: 20px;
+
+  color: black;
+}
+
+.main {
+  order: 1;
+  flex-basis: 60%;
+  min-width: 400px;
+  padding: 10px;
+
+  background: rgba(196, 231, 94, 0.8);
+
+  text-align: justify;
+}
+
+.nav {
+  order: 2;
+  flex-basis: 30%;
+  background: rgba(185, 239, 25, 0.7);
+  padding: 10px;
+  margin-bottom: 50px;
+}
+
+.sidebar__menu {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  width: 100%;
+  flex-flow: row wrap;
+}
+
+.sidebar__item {
+  width: 50%;
+  padding: 2px;
+}
+
+.socials__vk {
+  order: 3;
+  flex-basis: 30%;
+  background: rgba(185, 239, 25, 0.7);
+  padding: 10px;
+  height: 150px;
+  margin-bottom: 50px;
+
+}
+
+.sosials__fb {
+  order: 4;
+  flex-basis: 30%;
+  background: rgba(185, 239, 25, 0.7);
+  padding: 10px;
+  height: 150px;
+  margin-bottom: 50px;
+}
