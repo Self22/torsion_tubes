@@ -67,7 +67,7 @@ gulp.task('html:build', function () {
                 }
             })
         }))
-        .pipe(pug({pretty: true}))
+        .pipe(pug({pretty: true})) // настройка pug для отмены минимизации html на продакшене
         .pipe(gulp.dest(path.dest.html)) //Выплюнем их в папку build
         .pipe(reload({stream: true})); //И перезагрузим наш сервер для обновлений
 });
@@ -85,14 +85,14 @@ gulp.task('js:build', function () {
 
 gulp.task('css:build', function () {
     gulp.src(path.src.css) //Выберем наш main.scss
-        .pipe(plumber({ // plumber - плагин для отловли ошибок.
-            errorHandler: notify.onError(function (err) { // nofity - представление ошибок в удобном для вас виде.
-                return {
-                    title: 'Styles',
-                    message: err.message
-                }
-            })
-        }))
+        //.pipe(plumber({ // plumber - плагин для отловли ошибок.
+        //    errorHandler: notify.onError(function (err) { // nofity - представление ошибок в удобном для вас виде.
+        //        return {
+        //            title: 'Styles',
+        //            message: err.message
+        //        }
+        //    })
+        //}))
         .pipe(sourcemaps.init()) //То же самое что и с js
         .pipe(sass().on('error', sass.logError)) //Скомпилируем
         .pipe(prefixer()) //Добавим вендорные префиксы
