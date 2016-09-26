@@ -1,0 +1,60 @@
+doctype
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        title Торсионная труба \ Torsion Tubes
+        link(rel="stylesheet" href="css/main.css")
+    body
+        div#fb-root
+        script(src="js/fb_script.js")
+        include includes/header.pug
+        .wrapper
+            main.main
+                h2.article__title  Контакты
+                strong   Украина:
+                p   Тел.: +38 (050) 454-40-43
+                p   E-mail:  torsiontubes@gmail.com
+                br
+                hr
+                br
+                strong   Россия:
+                p   Санкт-Петербург
+                p   Тел.: +7(950)2213307 Игорь Коновалов
+                p   E-mail: konovalov.avp@gmail.com
+                p   https://vk.com/id794309
+                br
+                p   Сибирь — Yoga Studio ZEN
+                p   E-mail: info@zen-yoga.ru
+                p   Сайт: zen-yoga.ru
+                br
+                p   © http://torsiontubes.in.ua/
+                .empty
+            nav.sidebar
+                ul.sidebar__menu
+                    li.sidebar__item
+                        .nav__title
+                            a.nav__link(href='index.html') Главная
+                    li.sidebar__item
+                        .nav__title
+                            a.nav__link(href='author.html') Об авторе
+                    li.sidebar__item
+                        .nav__title
+                            a.nav__link(href='applying.html') Сферы применения
+                    li.sidebar__item
+                        .nav__title
+                            a.nav__link(href='maintenance.html') Особенности использования
+                    li.sidebar__item
+                        .nav__title
+                            a.nav__link(href='stuff.html') Stuff
+                    li.sidebar__item
+                        .nav__title
+                            a.nav__link(href='feedback.html') Отзывы
+                    li.sidebar__item
+                        .nav__title
+                            a.nav__link(href='order.html') Заказать
+                    li.sidebar__item.sidebar__item-active
+                        .nav__title
+                            a.nav__link(href='contacts.html') Контакты
+                include includes/socials.pug
+        footer.footer
+            address.footer__email   E-mail: torsiontubes@gmail.com
