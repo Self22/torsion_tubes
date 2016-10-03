@@ -2,8 +2,10 @@ doctype
 html(lang="ru")
     head
         meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
         title Торсионная труба \ Torsion Tubes
         link(rel="stylesheet" href="css/main.css")
+        link(rel="icon" href="img/favicon.ico" type="image/x-icon")
     body
         div#fb-root
         script(src="js/fb_script.js")
@@ -11,15 +13,14 @@ html(lang="ru")
         .wrapper
             main.main
                 h2.article__title  Владимир Васильевич Долгачёв
-                br
                 .img__big.img__big-author
                     img(src='img/img_author1.jpg')
                 p   Владимир Васильевич Долгачёв занимается собственным исследованием психоэнергетики человека с начала 80-х годов. Принимал участие в различных экспериментальных психотехнических и психологических группах того времени, в разнообразных исследованиях экстрасенсорики и биоэнергетики, вместе с О.Г. Бахтияровым участвовал в становлении и развитии психонетики. Исследовал влияние на человеческое тело различных материалов и полей, разного рода излучений и воздействий. На протяжении тридцати лет ему удалось самостоятельно развить специфический тип чувствительности тела, который нет возможности соотнести ни с чем известным человечеству до этого. Особенности его подхода нельзя описать в кратком обзоре, поэтому, чтобы составить собственное впечатление, рекомендуем Вам ознакомиться с материалами в разделе
+                    =' '
                     a(href='stuff.html') «Тексты, интервью, лекции»
                     span    , а также при случае самому попасть на занятия Владимира Васильевича. С 2011 года В.В. Долгачёв на постоянной основе проводит занятия в Киеве, также проводятся периодические семинары в Украине и за рубежом.
                 p   Самое известное изобретение Владимира Васильевича — торсионная труба, сферы применения которой выходит за рамки оздоровления организма человека.
                 p   © http://torsiontubes.in.ua/
-                .empty
             nav.sidebar
                 ul.sidebar__menu
                     li.sidebar__item
@@ -30,13 +31,13 @@ html(lang="ru")
                             a.nav__link(href='author.html') Об авторе
                     li.sidebar__item
                         .nav__title
-                            a.nav__link(href='applying.html') Сферы применения
+                            a.nav__link(href='applying.html') Применение
                     li.sidebar__item
                         .nav__title
-                            a.nav__link(href='maintenance.html') Особенности использования
+                            a.nav__link(href='maintenance.html') Эксплуатация
                     li.sidebar__item
                         .nav__title
-                            a.nav__link(href='stuff.html') Stuff
+                            a.nav__link(href='stuff.html') По теме
                     li.sidebar__item
                         .nav__title
                             a.nav__link(href='feedback.html') Отзывы
@@ -48,4 +49,5 @@ html(lang="ru")
                             a.nav__link(href='contacts.html') Контакты
                 include includes/socials.pug
         footer.footer
-            address.footer__email   E-mail: torsiontubes@gmail.com
+            address.footer__email
+                a.footer__email(href='mailto:torsiontubes@gmail.com') E-mail: torsiontubes@gmail.com

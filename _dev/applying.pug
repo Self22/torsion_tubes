@@ -2,11 +2,13 @@ doctype
 html(lang="ru")
     head
         meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
         title Торсионная труба \ Torsion Tubes
         link(rel="stylesheet" href="css/main.css")
+        link(rel="icon" href="img/favicon.ico" type="image/x-icon")
     body
         div#fb-root
-        script(src="js/fb_script.js")
+        script(defer src="js/fb_script.js")
         include includes/header.pug
         .wrapper
             main.main
@@ -40,7 +42,6 @@ html(lang="ru")
                 p   Труба работает вне зависимости от теоретической или религиозной направленности пользователя, поскольку влияет на тело помимо сознания и его установок.
                 br
                 p   © http://torsiontubes.in.ua/
-                .empty
             nav.sidebar
                 ul.sidebar__menu
                     li.sidebar__item
@@ -51,13 +52,13 @@ html(lang="ru")
                             a.nav__link(href='author.html') Об авторе
                     li.sidebar__item.sidebar__item-active
                         .nav__title
-                            a.nav__link(href='applying.html') Сферы применения
+                            a.nav__link Применение
                     li.sidebar__item
                         .nav__title
-                            a.nav__link(href='maintenance.html') Особенности использования
+                            a.nav__link(href='maintenance.html') Эксплуатация
                     li.sidebar__item
                         .nav__title
-                            a.nav__link(href='stuff.html') Stuff
+                            a.nav__link(href='stuff.html') По теме
                     li.sidebar__item
                         .nav__title
                             a.nav__link(href='feedback.html') Отзывы
@@ -69,4 +70,5 @@ html(lang="ru")
                             a.nav__link(href='contacts.html') Контакты
                 include includes/socials.pug
         footer.footer
-            address.footer__email   E-mail: torsiontubes@gmail.com
+            address.footer__email
+                a(href='mailto:torsiontubes@gmail.com') E-mail: torsiontubes@gmail.com

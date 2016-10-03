@@ -14,7 +14,30 @@
             opacity: '0.8'
         }, 56482260)
 
+
 .socials__fb
     .fb-page(data-href="https://www.facebook.com/torsiontubes/", data-tabs="timeline", data-width="280", data-height="300", data-small-header="false", data-adapt-container-width="true", data-hide-cover="false", data-show-facepile="true")
         blockquote(cite="https://www.facebook.com/torsiontubes/", class="fb-xfbml-parse-ignore")
             a(href="https://www.facebook.com/torsiontubes/") Торсионная труба Долгачёва - Украина
+
+.vk__mobile
+    a.vk_nav(href='https://vk.com/torsion_tube')
+        img(src='img/vk_mobile.svg')
+.fb__mobile
+    a.fb_nav(href='https://www.facebook.com/torsiontubes/')
+        img(src='img/fb_mobile.svg')
+
+script.
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-42666121-1', 'auto');
+    ga('send', 'pageview');

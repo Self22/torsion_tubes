@@ -84,7 +84,7 @@ gulp.task('js:build', function () {
 
 
 gulp.task('css:build', function () {
-    gulp.src(path.src.css) //¬ыберем наш main.scss
+    gulp.src(path.src.css) // ¬ыберем наш main.scss
         //.pipe(plumber({ // plumber - плагин дл€ отловли ошибок.
         //    errorHandler: notify.onError(function (err) { // nofity - представление ошибок в удобном дл€ вас виде.
         //        return {
