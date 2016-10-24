@@ -53,7 +53,6 @@ p {
 }
 
 .header {
-  display: flex;
   position: relative;
   margin-top: 15px;
   margin-bottom: 30px;
@@ -62,9 +61,9 @@ p {
 
   border: 1px solid #93c50f;
   box-shadow: 2px 1px 22px rgba(0, 0, 0, .6);
-  flex-direction: row;
 
 }
+
 
 .background__header {
   position: absolute;
@@ -77,7 +76,6 @@ p {
 
 .logo, .email {
   position: absolute;
-  display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   -webkit-box-align: center;
@@ -87,12 +85,20 @@ p {
   justify-content: flex-start;
 }
 
+
 .logo {
-  flex: 2 150px;
   z-index: 2;
   left: 15%;
   bottom: -6%;
   width: 35%;
+
+  @include tablets {
+    left: 10%;
+  }
+
+  @include phones {
+    left: 10%;
+  }
 
   & h1 {
     font-size: rem(39px);
@@ -107,7 +113,6 @@ p {
   }
 }
 
-
 .logo__bamboo {
   position: absolute;
   width: rem(75px);
@@ -117,7 +122,13 @@ p {
   z-index: 4;
 
   @include phones {
-    margin-top: 40%;
+    display: none;
+    //margin-top: 40%;
+  }
+
+  @include tablets {
+    display: none;
+    //font-size: 14px;
   }
 
   & img {
@@ -129,9 +140,12 @@ p {
 .email {
   position: absolute;
   z-index: 3;
-  flex: 1 100px;
   right: 20%;
   top: 35%;
+
+  @include tablets {
+    right: 10%;
+  }
 
   address {
     width: 180px;
@@ -594,9 +608,6 @@ hr {
 .audio__controls {
   width: 100%;
 }
-
-
-
 
 
 

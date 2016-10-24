@@ -419,7 +419,6 @@ p {
 }
 
 .header {
-  display: flex;
   position: relative;
   margin-top: 15px;
   margin-bottom: 30px;
@@ -427,7 +426,6 @@ p {
   width: 100%;
   border: 1px solid #93c50f;
   box-shadow: 2px 1px 22px rgba(0, 0, 0, 0.6);
-  flex-direction: row;
 }
 
 .background__header {
@@ -441,7 +439,6 @@ p {
 
 .logo, .email {
   position: absolute;
-  display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   -webkit-box-align: center;
@@ -452,11 +449,22 @@ p {
 }
 
 .logo {
-  flex: 2 150px;
   z-index: 2;
   left: 15%;
   bottom: -6%;
   width: 35%;
+}
+
+@media screen and (max-width: 768px) {
+  .logo {
+    left: 10%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logo {
+    left: 10%;
+  }
 }
 
 .logo h1 {
@@ -482,7 +490,13 @@ p {
 
 @media screen and (max-width: 480px) {
   .logo__bamboo {
-    margin-top: 40%;
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .logo__bamboo {
+    display: none;
   }
 }
 
@@ -494,16 +508,20 @@ p {
 .email {
   position: absolute;
   z-index: 3;
-  flex: 1 100px;
   right: 20%;
   top: 35%;
 }
 
-.email address {
-  width: 180px;
-  color: black;
-  font-weight: 800;
+@media screen and (max-width: 768px) {
+  .email {
+    right: 10%;
+  }
 }
+  .email address {
+    width: 180px;
+    color: black;
+    font-weight: 800;
+  }
 
 @media screen and (max-width: 480px) {
   .email address {
