@@ -26,8 +26,8 @@ var path = {
     },
     src: {
         html: '_dev/*.html',
-        css: '_dev/css/main.css',
-        js: '_dev/js/main.js',
+        css: '_dev/css/**/*.scss',
+        js: '_dev/js/*.js',
         img: '_dev/img/**/*.*',
         fonts: '_dev/fonts/**/*.*',
         pug: '_dev/*.pug'
@@ -58,59 +58,59 @@ var config = {
     };
 
 gulp.task('html:build', function () {
-    gulp.src(path.src.pug) //Выберем файлы по нужному пути
-        .pipe(plumber({ // plumber - плагин для отловли ошибок.
-            errorHandler: notify.onError(function (err) { // nofity - представление ошибок в удобном для вас виде.
+    gulp.src(path.src.pug) //Р’С‹Р±РµСЂРµРј С„Р°Р№Р»С‹ РїРѕ РЅСѓР¶РЅРѕРјСѓ РїСѓС‚Рё
+        .pipe(plumber({ // plumber - РїР»Р°РіРёРЅ РґР»СЏ РѕС‚Р»РѕРІР»Рё РѕС€РёР±РѕРє.
+            errorHandler: notify.onError(function (err) { // nofity - РїСЂРµРґСЃС‚Р°РІР»РµРЅРёРµ РѕС€РёР±РѕРє РІ СѓРґРѕР±РЅРѕРј РґР»СЏ РІР°СЃ РІРёРґРµ.
                 return {
                     title: 'Pug',
                     message: err.message
                 }
             })
         }))
-        .pipe(pug({pretty: true})) // настройка pug для отмены минимизации html на продакшене
-        .pipe(gulp.dest(path.dest.html)) //Выплюнем их в папку build
-        .pipe(reload({stream: true})); //И перезагрузим наш сервер для обновлений
+        .pipe(pug({pretty: true})) // РЅР°СЃС‚СЂРѕР№РєР° pug РґР»СЏ РѕС‚РјРµРЅС‹ РјРёРЅРёРјРёР·Р°С†РёРё html РЅР° РїСЂРѕРґР°РєС€РµРЅРµ
+        .pipe(gulp.dest(path.dest.html)) //Р’С‹РїР»СЋРЅРµРј РёС… РІ РїР°РїРєСѓ build
+        .pipe(reload({stream: true})); //Р РїРµСЂРµР·Р°РіСЂСѓР·РёРј РЅР°С€ СЃРµСЂРІРµСЂ РґР»СЏ РѕР±РЅРѕРІР»РµРЅРёР№
 });
 
 
 gulp.task('js:build', function () {
-    gulp.src(path.src.js) //Найдем наш main файл
-        .pipe(sourcemaps.init()) //Инициализируем sourcemap
-        .pipe(uglify()) //Сожмем наш js
-        .pipe(sourcemaps.write('.')) //Пропишем карты
-        .pipe(gulp.dest(path.dest.js)) //Выплюнем готовый файл в build
-        .pipe(reload({stream: true})); //И перезагрузим сервер
+    gulp.src(path.src.js) //РќР°Р№РґРµРј РЅР°С€ main С„Р°Р№Р»
+        .pipe(sourcemaps.init()) //РРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј sourcemap
+        .pipe(uglify()) //РЎРѕР¶РјРµРј РЅР°С€ js
+        .pipe(sourcemaps.write('.')) //РџСЂРѕРїРёС€РµРј РєР°СЂС‚С‹
+        .pipe(gulp.dest(path.dest.js)) //Р’С‹РїР»СЋРЅРµРј РіРѕС‚РѕРІС‹Р№ С„Р°Р№Р» РІ build
+        .pipe(reload({stream: true})); //Р РїРµСЂРµР·Р°РіСЂСѓР·РёРј СЃРµСЂРІРµСЂ
 });
 
 
 gulp.task('css:build', function () {
-    gulp.src(path.src.css) // Выберем наш main.scss
-        //.pipe(plumber({ // plumber - плагин для отловли ошибок.
-        //    errorHandler: notify.onError(function (err) { // nofity - представление ошибок в удобном для вас виде.
-        //        return {
-        //            title: 'Styles',
-        //            message: err.message
-        //        }
-        //    })
-        //}))
-        .pipe(sourcemaps.init()) //То же самое что и с js
-        .pipe(sass().on('error', sass.logError)) //Скомпилируем
-        .pipe(prefixer()) //Добавим вендорные префиксы
-        .pipe(cleanCSS()) //Сожмем
+    gulp.src(path.src.css) // Р’С‹Р±РµСЂРµРј РЅР°С€ main.scss
+        .pipe(plumber({ // plumber - РїР»Р°РіРёРЅ РґР»СЏ РѕС‚Р»РѕРІР»Рё РѕС€РёР±РѕРє.
+            errorHandler: notify.onError(function (err) { // nofity - РїСЂРµРґСЃС‚Р°РІР»РµРЅРёРµ РѕС€РёР±РѕРє РІ СѓРґРѕР±РЅРѕРј РґР»СЏ РІР°СЃ РІРёРґРµ.
+                return {
+                    title: 'Styles',
+                    message: err.message
+                }
+            })
+        }))
+        .pipe(sourcemaps.init()) //РўРѕ Р¶Рµ СЃР°РјРѕРµ С‡С‚Рѕ Рё СЃ js
+        .pipe(sass().on('error', sass.logError)) //РЎРєРѕРјРїРёР»РёСЂСѓРµРј
+        .pipe(prefixer()) //Р”РѕР±Р°РІРёРј РІРµРЅРґРѕСЂРЅС‹Рµ РїСЂРµС„РёРєСЃС‹
+        .pipe(cleanCSS()) //РЎРѕР¶РјРµРј
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(path.dest.css)) //И в build
+        .pipe(gulp.dest(path.dest.css)) //Р РІ build
         .pipe(reload({stream: true}));
 });
 
 gulp.task('img:build', function () {
-    gulp.src(path.src.img) //Выберем наши картинки
-        .pipe(imagemin({ //Сожмем их
+    gulp.src(path.src.img) //Р’С‹Р±РµСЂРµРј РЅР°С€Рё РєР°СЂС‚РёРЅРєРё
+        .pipe(imagemin({ //РЎРѕР¶РјРµРј РёС…
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()],
             interlaced: true
         }))
-        .pipe(gulp.dest(path.dest.img)) //И бросим в build
+        .pipe(gulp.dest(path.dest.img)) //Р Р±СЂРѕСЃРёРј РІ build
         .pipe(reload({stream: true}));
 });
 
