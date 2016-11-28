@@ -454,13 +454,16 @@ p {
   opacity: 0.6;
   border: 1px solid #93c50f;
   box-shadow: 2px 2px 22px rgba(0, 0, 0, .6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 
 .footer__email {
-  position: absolute;
-  top: 40%;
-  right: 32%;
+  //position: absolute;
+  //top: 40%;
+  //right: 32%;
   color: black;
   font-weight: 500;
   font-size: rem(20px);
